@@ -9,16 +9,18 @@ namespace WorldCupContest.Models
     {
         public int Id { get; set; }
         public string TeamName { get; set; }
+        public int Score { get; set; }
         public RegisterTeam RegisteredTeam { get; set; }
 
         public RegisterTeam()
         {
         }
 
-        public RegisterTeam(int id, string teamName)
+        public RegisterTeam(int id, string teamName, int score)
         {
             Id = id;
             TeamName = teamName;
+            Score = score;
         }
     }
 }

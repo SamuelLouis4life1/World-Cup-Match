@@ -12,6 +12,7 @@ using WorldCupContest.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+//using WorldCupContest.Services;
 
 namespace WorldCupContest
 {
@@ -34,6 +35,8 @@ namespace WorldCupContest
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            //services.AddScoped<RegisterTournamentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +65,7 @@ namespace WorldCupContest
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=RegisterTournaments}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

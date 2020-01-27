@@ -54,7 +54,7 @@ namespace WorldCupContest.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TeamName")] RegisterTeam registerTeam)
+        public async Task<IActionResult> Create([Bind("Id,TeamName,Score")] RegisterTeam registerTeam)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace WorldCupContest.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TeamName")] RegisterTeam registerTeam)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TeamName,Score")] RegisterTeam registerTeam)
         {
             if (id != registerTeam.Id)
             {

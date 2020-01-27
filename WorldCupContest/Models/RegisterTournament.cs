@@ -10,6 +10,7 @@ namespace WorldCupContest.Models
         public int Id { get; set; }
         public string TournamentName { get; set; }
         public DateTime TournamentDate { get; set; }
+        public string AwayHomeGame { get; set; }
         public ICollection<RegisterTeam> RegisterTeams { get; set; } = new List<RegisterTeam>();
         public ICollection<Matchup> Matchups { get; set; } = new List<Matchup>();
 
@@ -17,11 +18,12 @@ namespace WorldCupContest.Models
         {
         }
 
-        public RegisterTournament(int id, string tournamentName, DateTime tournamentDate)
+        public RegisterTournament(int id, string tournamentName, DateTime tournamentDate, string awayHomeGame)
         {
             Id = id;
             TournamentName = tournamentName;
             TournamentDate = tournamentDate;
+            AwayHomeGame = awayHomeGame;
         }
 
         public void AddRegisterTeam(RegisterTeam registerTeam)

@@ -10,6 +10,8 @@ namespace WorldCupContest.Models
         public int Id { get; set; }
         public int TeamQuantity { get; set; }
         public DateTime MatchupDate { get; set; }
+        public string  FirstTeamName { get; set; }
+        public string SecondTimeName { get; set; }
         public RegisterTeam RegisteredTeam { get; set; }
         public RegisterTournament RegisteredTournament { get; set; }
         public ICollection<RegisterTeam> RegisterTeams { get; set; } = new List<RegisterTeam>();
@@ -18,11 +20,13 @@ namespace WorldCupContest.Models
         {
         }
 
-        public Matchup(int id, int teamQuantity, DateTime matchupDate)
+        public Matchup(int id, int teamQuantity, DateTime matchupDate, string firstTeamName, string secondTimeName)
         {
             Id = id;
             TeamQuantity = teamQuantity;
             MatchupDate = matchupDate;
+            FirstTeamName = firstTeamName;
+            SecondTimeName = secondTimeName;
         }
 
         public void AddRegisteredTeam(RegisterTeam registeredTeam)
